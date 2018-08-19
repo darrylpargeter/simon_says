@@ -1,0 +1,130 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #324E5C;
+}
+
+section {
+  position: relative;
+  z-index: 1;
+  display: flex;
+}
+.game-board {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.menu {
+  top: 25%;
+  left: 25%;
+  width: 300px;
+  height: 300px;
+  border-radius: 300px;
+  border: 5px solid #333238;
+  position: absolute;
+  background: #dbdeb5;
+  z-index: 10;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.count, .start, .restart {
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.count {
+  grid-column: 1 / span 2;
+  border-top-left-radius: 300px;
+  border-top-right-radius: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.count h1 {
+  margin: 0;
+  font-size: 40px;
+  color: #47363E;
+}
+
+.start {
+  background: #467b87;
+  border-bottom-left-radius: 300px;
+  transform: scale(1);
+  transition: transform .2s;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.btn {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.btn h3 {
+  position: relative;
+  top: 25%;
+  left: 20%;
+  color: #47363E;
+  margin: 0;
+}
+
+.btn:active {
+  transform: scale(.95);
+  transition: transform .2s;
+}
+
+.start h3 {
+  position: relative;
+  left: 35%;
+}
+
+.restart {
+  background: #f73955;
+  border-bottom-right-radius: 300px;
+}
+
+.quarter {
+  width: 300px;
+  height: 300px;
+  transition: transform .2s;
+}
+
+.top-left {
+  border-top-left-radius: 300px;
+  background: #45B09C
+}
+
+.top-right {
+  border-top-right-radius: 300px;
+  background: #f73955;
+}
+
+.bottom-left {
+  border-bottom-left-radius: 300px;
+  background: #eec84c;
+}
+
+.bottom-right {
+  border-bottom-right-radius: 300px;
+  background: #2A96BD
+}
+
+.animate {
+  transform: scale(1.1);
+  transition: transform .2s;
+}
