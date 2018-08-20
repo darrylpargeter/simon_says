@@ -163,7 +163,6 @@ class Game {
     this.sequence.sequence.forEach((segment, idx) => {
       setTimeout(() => this.animated(this.segments[segment], idx), (idx + 1) * 500);
     });
-    console.log(this.sequence.sequence);
   }
   
   start({ target: btn }) {
