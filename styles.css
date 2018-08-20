@@ -38,22 +38,24 @@ section {
   grid-template-rows: 1fr 1fr;
 }
 
-.count, .start, .restart {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-}
-
-.count {
+.count-wrapper {
   grid-column: 1 / span 2;
   border-top-left-radius: 300px;
   border-top-right-radius: 300px;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
-.count h1 {
+.count-wrapper i {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #47363E;
+}
+
+.count {
   margin: 0;
   font-size: 40px;
   color: #47363E;

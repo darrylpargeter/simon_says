@@ -71,7 +71,7 @@ class Game {
     this.segments = document.querySelectorAll('.quarter');
     this.startBtn = document.querySelector('.start');
     this.restartBtn = document.querySelector('.restart');
-    this.muteBtn = document.querySelector('.mute-btn');
+    this.muteBtn = document.querySelector('.volume');
     this.count = document.querySelector('.count');
     this.sequence = new Sequence(true);
     this.userSequence = new Sequence();
@@ -87,13 +87,19 @@ class Game {
     this.loadedSounds = new Sounds(this.soundList);
   }
 
+  oneTimeEvents(item, event, fn) {
+    item.addEventListener(event, fn, { once: true });
+  }
+
   addEvents() {
-    this.startBtn.addEventListener('click', this.start.bind(this));
-    // this.muteBtn.addEventListener('click', this.mute.bind(this));
+    this.oneTimeEvents(this.startBtn, 'click', this.start.bind(this));
+    this.muteBtn.addEventListener('click', this.mute.bind(this));
     this.segments.forEach(segment => segment.addEventListener('click', this.segmentClicked.bind(this)));
   }
 
   mute() {
+    this.muteBtn.classList.toggle('fa-volume-up');
+    this.muteBtn.classList.toggle('fa-volume-off');
     this.muted = this.muted ? false : true;
   }
 
@@ -130,6 +136,7 @@ class Game {
     this.userSequence.clear();
     this.started = false;
     this.updateCount();
+    this.oneTimeEvents(this.startBtn, 'click', this.start.bind(this));
   }
 
   segmentClicked({ target: segment }) {
@@ -164,6 +171,7 @@ class Game {
     this.sequence.addRandomValue();
     this.updateCount();
     this.playAnimations();
+    this.oneTimeEvents(this.restartBtn, 'click', this.reset.bind(this));
   }
 }
 
