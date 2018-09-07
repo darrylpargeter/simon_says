@@ -1,4 +1,4 @@
-# Simon Says
+# [Simon Says](https://darrylpargeter.co.uk/simon_says/)
 
 This version of Simon Says in developed in Javascript and playable in the browser.
 
